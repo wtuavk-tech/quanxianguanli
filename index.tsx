@@ -205,8 +205,8 @@ const NotificationBar = () => (
     </div>
     <div className="flex-1 overflow-hidden relative h-5 flex items-center">
       <div className="whitespace-nowrap animate-[marquee_25s_linear_infinite] group-hover/marquee:[animation-play-state:paused] flex items-center gap-8 text-xs font-medium text-slate-700 cursor-default">
-        <span>🔥 <span className="font-bold text-orange-600">界面优化：</span>机器人录单配置子模块“天润融通”已按最新图片规范更新。</span>
-        <span>📢 <span className="font-bold text-emerald-600">视觉提醒：</span>全系统表格隔行变色对比度保持加深。</span>
+        <span>🔥 <span className="font-bold text-orange-600">界面优化：</span>快速操作模块高度已按要求缩小30%，布局更紧凑。</span>
+        <span>📢 <span className="font-bold text-emerald-600">系统提醒：</span>全系统圆角矩形设计与加深隔行变色底色保持不变。</span>
       </div>
     </div>
     <style>{`
@@ -222,13 +222,16 @@ const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (
     "订单权限", "手机信息", "手机分配", "导出任务", "个人配置", "导出配置", "机器人录单配置"
   ];
   return (
-    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl">
-      <div className="grid grid-cols-8 gap-3">
+    // 修改：将 p-5 (20px) 缩小至 py-3 px-5 (上下内边距减小约40%，满足整体板块缩小30%要求)，mb-4 减小为 mb-3
+    <div className="bg-white py-3 px-5 mb-3 border border-gray-200 shadow-sm rounded-2xl">
+      {/* 修改：将 gap-3 缩小至 gap-2 以节省高度 */}
+      <div className="grid grid-cols-8 gap-2">
         {buttons.map((btn, index) => (
           <button 
             key={index}
             onClick={() => onSelect(btn)}
-            className={`h-9 px-2 text-xs font-medium rounded-xl transition-all shadow-sm flex items-center justify-center text-center leading-tight border ${
+            // 修改：将 h-9 (36px) 缩小至 h-7 (28px)，字体 text-xs (12px) 缩小至 text-[11px]
+            className={`h-7 px-1 text-[11px] font-medium rounded-lg transition-all shadow-sm flex items-center justify-center text-center leading-tight border ${
               active === btn 
                 ? 'bg-blue-500 text-white border-blue-500' 
                 : 'bg-slate-50 hover:bg-blue-50 text-gray-700 hover:text-blue-600 border-slate-200 hover:border-blue-200'
@@ -677,7 +680,6 @@ const App = () => {
             <th className="px-4 py-3">创建者</th>
             <th className="px-4 py-3 text-center">状态</th>
             <th className="px-4 py-3">期待城市</th>
-            {/* Fix: Added missing ">" to close th tag correctly */}
             <th className="px-4 py-3">虚拟号码</th>
             <th className="px-2 py-3 w-16">分机号</th>
             <th className="px-4 py-3">客户号码</th>
