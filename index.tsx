@@ -195,22 +195,23 @@ const generateMockData = (type: ActionType, subTab?: string): OrderData[] => {
 // --- 子组件 ---
 
 const NotificationBar = () => (
-  <div className="flex items-center gap-4 mb-3 px-4 py-2 bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 border border-orange-100 rounded-xl shadow-sm overflow-hidden relative group/marquee shrink-0">
-    <div className="flex items-center gap-2 text-orange-600 shrink-0 z-10 bg-inherit pr-2">
-      <div className="relative">
-        <Bell size={14} className="animate-[wiggle_1s_ease-in-out_infinite]" />
-        <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-red-500 rounded-full border border-orange-50"></div>
+  <div className="flex items-center gap-4 mb-4 px-4 py-3 bg-[#0B1727] text-white rounded-xl shadow-md overflow-hidden relative shrink-0">
+    <div className="flex items-center gap-3 shrink-0 z-10">
+      <div className="px-2 py-1 bg-[#F5222D] text-white text-xs font-bold rounded flex items-center gap-1 shadow-sm">
+        <span>重要公告</span>
       </div>
-      <span className="text-xs font-bold whitespace-nowrap">系统公告</span>
+      <Bell size={16} className="text-gray-400" />
     </div>
     <div className="flex-1 overflow-hidden relative h-5 flex items-center">
-      <div className="whitespace-nowrap animate-[marquee_25s_linear_infinite] group-hover/marquee:[animation-play-state:paused] flex items-center gap-8 text-xs font-medium text-slate-700 cursor-default">
-        <span>🔥 <span className="font-bold text-orange-600">界面优化：</span>快速操作模块高度已按要求缩小30%，布局更紧凑。</span>
-        <span>📢 <span className="font-bold text-emerald-600">系统提醒：</span>全系统圆角矩形设计与加深隔行变色底色保持不变。</span>
+      <div className="whitespace-nowrap animate-[marquee_25s_linear_infinite] flex items-center gap-8 text-sm font-medium text-gray-200 cursor-default">
+        <span>📢 关于 2025 年度秋季职级晋升评审的通知：点击下方详情以阅读完整公告内容。请所有相关人员务必在截止日期前完成确认。</span>
+        <span>🔥 界面优化：系统视觉风格已全面升级，如有问题请联系管理员。</span>
       </div>
     </div>
+    <div className="ml-4 px-3 py-1 bg-[#1E293B] rounded text-xs text-gray-400 font-mono tracking-wide shrink-0">
+      2025-11-19
+    </div>
     <style>{`
-      @keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
       @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     `}</style>
   </div>
@@ -221,25 +222,37 @@ const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (
     "直派转未派", "号码绑定", "转派权限", "线下师傅", "项目管理", "地域管理", "派单权限", "接单权限",
     "订单权限", "手机信息", "手机分配", "导出任务", "个人配置", "导出配置", "机器人录单配置"
   ];
+
+  // 颜色映射配置：红、黄、蓝、绿、青、紫
+  const colorMap = [
+    { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-500', activeBg: 'bg-red-500', activeText: 'text-white', activeBorder: 'border-red-500', hoverBorder: 'hover:border-red-400' },
+    { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-500', activeBg: 'bg-amber-500', activeText: 'text-white', activeBorder: 'border-amber-500', hoverBorder: 'hover:border-amber-400' },
+    { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-500', activeBg: 'bg-blue-500', activeText: 'text-white', activeBorder: 'border-blue-500', hoverBorder: 'hover:border-blue-400' },
+    { bg: 'bg-lime-50', border: 'border-lime-200', text: 'text-lime-600', activeBg: 'bg-lime-500', activeText: 'text-white', activeBorder: 'border-lime-500', hoverBorder: 'hover:border-lime-400' },
+    { bg: 'bg-cyan-50', border: 'border-cyan-200', text: 'text-cyan-600', activeBg: 'bg-cyan-500', activeText: 'text-white', activeBorder: 'border-cyan-500', hoverBorder: 'hover:border-cyan-400' },
+    { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-600', activeBg: 'bg-purple-500', activeText: 'text-white', activeBorder: 'border-purple-500', hoverBorder: 'hover:border-purple-400' },
+  ];
+
   return (
-    // 修改：将 p-5 (20px) 缩小至 py-3 px-5 (上下内边距减小约40%，满足整体板块缩小30%要求)，mb-4 减小为 mb-3
-    <div className="bg-white py-3 px-5 mb-3 border border-gray-200 shadow-sm rounded-2xl">
-      {/* 修改：将 gap-3 缩小至 gap-2 以节省高度 */}
-      <div className="grid grid-cols-8 gap-2">
-        {buttons.map((btn, index) => (
-          <button 
-            key={index}
-            onClick={() => onSelect(btn)}
-            // 修改：将 h-9 (36px) 缩小至 h-7 (28px)，字体 text-xs (12px) 缩小至 text-[11px]
-            className={`h-7 px-1 text-[11px] font-medium rounded-lg transition-all shadow-sm flex items-center justify-center text-center leading-tight border ${
-              active === btn 
-                ? 'bg-blue-500 text-white border-blue-500' 
-                : 'bg-slate-50 hover:bg-blue-50 text-gray-700 hover:text-blue-600 border-slate-200 hover:border-blue-200'
-            }`}
-          >
-            {btn}
-          </button>
-        ))}
+    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl">
+      <div className="grid grid-cols-8 gap-3">
+        {buttons.map((btn, index) => {
+          const style = colorMap[index % colorMap.length];
+          const isActive = active === btn;
+          return (
+            <button 
+              key={index}
+              onClick={() => onSelect(btn)}
+              className={`h-11 w-full px-1 text-sm font-bold rounded-xl transition-all shadow-sm flex items-center justify-center text-center leading-tight border-2 ${
+                isActive 
+                  ? `${style.activeBg} ${style.activeText} ${style.activeBorder} shadow-md scale-105` 
+                  : `${style.bg} ${style.text} ${style.border} ${style.hoverBorder} hover:shadow-md hover:-translate-y-0.5`
+              }`}
+            >
+              {btn}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
