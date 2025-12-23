@@ -223,30 +223,20 @@ const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (
     "订单权限", "手机信息", "手机分配", "导出任务", "个人配置", "导出配置", "机器人录单配置"
   ];
 
-  // 颜色映射配置：红、黄、蓝、绿、青、紫
-  const colorMap = [
-    { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-500', activeBg: 'bg-red-500', activeText: 'text-white', activeBorder: 'border-red-500', hoverBorder: 'hover:border-red-400' },
-    { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-500', activeBg: 'bg-amber-500', activeText: 'text-white', activeBorder: 'border-amber-500', hoverBorder: 'hover:border-amber-400' },
-    { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-500', activeBg: 'bg-blue-500', activeText: 'text-white', activeBorder: 'border-blue-500', hoverBorder: 'hover:border-blue-400' },
-    { bg: 'bg-lime-50', border: 'border-lime-200', text: 'text-lime-600', activeBg: 'bg-lime-500', activeText: 'text-white', activeBorder: 'border-lime-500', hoverBorder: 'hover:border-lime-400' },
-    { bg: 'bg-cyan-50', border: 'border-cyan-200', text: 'text-cyan-600', activeBg: 'bg-cyan-500', activeText: 'text-white', activeBorder: 'border-cyan-500', hoverBorder: 'hover:border-cyan-400' },
-    { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-600', activeBg: 'bg-purple-500', activeText: 'text-white', activeBorder: 'border-purple-500', hoverBorder: 'hover:border-purple-400' },
-  ];
-
   return (
     <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl">
       <div className="grid grid-cols-8 gap-3">
         {buttons.map((btn, index) => {
-          const style = colorMap[index % colorMap.length];
           const isActive = active === btn;
+          // Updated styling: height reduced by 20% (h-11 -> h-9), background #F0F9FE, blue text
           return (
             <button 
               key={index}
               onClick={() => onSelect(btn)}
-              className={`h-11 w-full px-1 text-sm font-bold rounded-xl transition-all shadow-sm flex items-center justify-center text-center leading-tight border-2 ${
+              className={`h-9 w-full px-1 text-sm font-bold rounded-xl transition-all shadow-sm flex items-center justify-center text-center leading-tight border ${
                 isActive 
-                  ? `${style.activeBg} ${style.activeText} ${style.activeBorder} shadow-md scale-105` 
-                  : `${style.bg} ${style.text} ${style.border} ${style.hoverBorder} hover:shadow-md hover:-translate-y-0.5`
+                  ? 'bg-blue-500 text-white border-blue-500 shadow-md scale-105' 
+                  : 'bg-[#F0F9FE] text-blue-500 border-blue-200 hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5'
               }`}
             >
               {btn}
@@ -525,7 +515,7 @@ const App = () => {
       case "机器人录单配置":
         if (robotSubTab === "天润融通") {
           return (
-            <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+            <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
               <th className="px-6 py-3 w-16">序号</th>
               <th className="px-6 py-3">部门</th>
               <th className="px-6 py-3">400号码</th>
@@ -536,7 +526,7 @@ const App = () => {
           );
         }
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-6 py-3 w-16">序号</th>
             <th className="px-6 py-3">店铺ID</th>
             <th className="px-6 py-3">店铺名称</th>
@@ -547,7 +537,7 @@ const App = () => {
         );
       case "个人配置":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-6 py-3 w-16">序号</th>
             <th className="px-6 py-3">用户名</th>
             <th className="px-6 py-3">配置项</th>
@@ -559,7 +549,7 @@ const App = () => {
         );
       case "导出配置":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3 w-16 text-center">序号</th>
             <th className="px-4 py-3">创建人</th>
@@ -574,7 +564,7 @@ const App = () => {
         );
       case "项目管理":
         return (
-          <tr className="border-b border-gray-100 text-[10px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[10px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-2 py-3">项目编号 <ChevronUp size={10} className="inline ml-1" /></th>
             <th className="px-2 py-3">项目名称 <ChevronUp size={10} className="inline ml-1" /></th>
@@ -592,7 +582,7 @@ const App = () => {
         );
       case "地域管理":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-6 py-3">编号 <ChevronUp size={10} className="inline" /></th>
             <th className="px-6 py-3">代码 <ChevronUp size={10} className="inline" /></th>
             <th className="px-6 py-3">名称 <ChevronUp size={10} className="inline" /></th>
@@ -604,7 +594,7 @@ const App = () => {
         );
       case "派单权限":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">用户编号 <ChevronUp size={10} className="inline" /></th>
@@ -618,7 +608,7 @@ const App = () => {
         );
       case "接单权限":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">用户名</th>
@@ -632,7 +622,7 @@ const App = () => {
         );
       case "订单权限":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-6 py-3 w-16">序号</th>
             <th className="px-6 py-3">订单来源</th>
             <th className="px-6 py-3 text-center">操作</th>
@@ -640,7 +630,7 @@ const App = () => {
         );
       case "手机信息":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">手机ID</th>
@@ -656,7 +646,7 @@ const App = () => {
         );
       case "手机分配":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">批次号 <ChevronUp size={10} className="inline" /></th>
@@ -669,7 +659,7 @@ const App = () => {
         );
       case "导出任务":
         return (
-          <tr className="border-b border-gray-100 text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">导出编号</th>
@@ -687,7 +677,7 @@ const App = () => {
         );
       case "号码绑定":
         return (
-          <tr className="border-b border-gray-100 text-[10px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[10px] text-gray-400 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">创建时间 <ChevronUp size={10} className="inline ml-1" /></th>
             <th className="px-4 py-3">创建者</th>
@@ -708,7 +698,7 @@ const App = () => {
       case "直派转未派":
       default:
         return (
-          <tr className="border-b border-gray-100 text-xs text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-xs text-gray-400 bg-slate-50/50">
             <th className="px-6 py-3 w-20 text-center">序号</th>
             <th className="px-6 py-3">订单来源</th>
             <th className="px-6 py-3">地域</th>
@@ -720,8 +710,9 @@ const App = () => {
   };
 
   const renderTableRow = (order: OrderData) => {
-    // 隔行变色：加深约 30%，使用 even:bg-blue-100/50
-    const rowClass = "text-gray-600 transition-colors hover:bg-blue-50/80 even:bg-blue-100/50";
+    // 隔行变色：加深约 30%，使用 even:bg-[#F0F9FE]
+    // 每一行的分割线颜色为：#cbd5e1
+    const rowClass = "text-gray-600 transition-colors hover:bg-blue-50/80 even:bg-[#F0F9FE] border-b border-[#cbd5e1]";
     
     switch(selectedAction) {
       case "机器人录单配置":
@@ -963,7 +954,8 @@ const App = () => {
             <thead className="sticky top-0 z-10">
               {renderTableHeader()}
             </thead>
-            <tbody className="divide-y divide-gray-50/50">
+            {/* Removed 'divide-y' from tbody to prevent double borders and conflicts with the row-specific border-b */}
+            <tbody className="">
               {currentData.map((order) => renderTableRow(order))}
             </tbody>
           </table>
