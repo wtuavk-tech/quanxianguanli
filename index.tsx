@@ -267,7 +267,7 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
             </div>
             {activeTab === "天润融通" ? (
               <div className="flex flex-wrap items-center gap-6">
-                <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">400号码</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+                <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">400号码</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
                 <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">订单来源</span><select className="w-32 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
                 <div className="flex items-center gap-2">
                   <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
@@ -277,7 +277,7 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
               </div>
             ) : (
               <div className="flex flex-wrap items-center gap-6">
-                <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">店铺ID</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+                <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">店铺ID</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
                 <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">店铺名称</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
                 <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">订单来源</span><select className="w-32 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
                 <div className="flex items-center gap-2">
@@ -368,7 +368,7 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
         return (
           <div className="flex flex-wrap items-center gap-6">
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">用户名</span><input type="text" placeholder="请输入内容" className="w-28 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">师傅uid</span><input type="text" placeholder="请输入内容" className="w-28 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">师傅uid</span><input type="text" placeholder="请输入内容" className="w-28 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">地域名</span><input type="text" placeholder="如：北京" className="w-28 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">项目名</span><input type="text" placeholder="如：修空调" className="w-28 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">派单状态</span><select className="w-24 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
@@ -394,9 +394,9 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
       case "手机信息":
         return (
           <div className="flex flex-wrap items-center gap-6">
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">手机编号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">手机编号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">手机型号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">手机号码</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">手机号码</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
             <div className="flex items-center gap-2">
               <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
               <button className="h-8 px-5 bg-white border border-gray-200 text-gray-500 text-xs rounded-lg font-medium">重置</button>
@@ -408,8 +408,8 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
       case "手机分配":
         return (
           <div className="flex flex-wrap items-center gap-6">
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">批次号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">创建时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="请选择" className="text-[10px] w-28 px-1 outline-none" /><span className="text-gray-300">至</span><input type="text" placeholder="请选择" className="text-[10px] w-28 px-1 outline-none" /></div></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">批次号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">创建时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="请选择" className="text-[10px] w-28 px-1 outline-none font-mono" /><span className="text-gray-300">至</span><input type="text" placeholder="请选择" className="text-[10px] w-28 px-1 outline-none font-mono" /></div></div>
             <div className="flex items-center gap-2">
               <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
               <button className="h-8 px-5 bg-white border border-gray-200 text-gray-500 text-xs rounded-lg font-medium">重置</button>
@@ -421,9 +421,9 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
       case "导出任务":
         return (
           <div className="flex flex-wrap items-center gap-6">
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">导出编号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">导出编号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">项目</span><select className="w-28 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">导出时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="请选择" className="text-[10px] w-28 px-1 outline-none" /></div></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">导出时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="请选择" className="text-[10px] w-28 px-1 outline-none font-mono" /></div></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">状态</span><select className="w-24 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
             <div className="flex items-center gap-2">
               <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
@@ -449,10 +449,10 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
       case "号码绑定":
         return (
           <div className="flex flex-wrap items-center gap-6">
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">客户号码</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">订单号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">客户号码</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">订单号</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">绑定类型</span><select className="w-28 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">创建时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="开始日期" className="text-[10px] w-20 px-1 outline-none" /><span className="text-gray-300">至</span><input type="text" placeholder="结束日期" className="text-[10px] w-20 px-1 outline-none" /></div></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">创建时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="开始日期" className="text-[10px] w-20 px-1 outline-none font-mono" /><span className="text-gray-300">至</span><input type="text" placeholder="结束日期" className="text-[10px] w-20 px-1 outline-none font-mono" /></div></div>
             <div className="flex items-center gap-2">
               <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
               <button className="h-8 px-5 bg-white border border-gray-200 text-gray-500 text-xs rounded-lg font-medium">重置</button>
@@ -463,7 +463,7 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
       case "转派权限":
         return (
           <div className="flex flex-wrap items-center gap-6">
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">创建时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="开始日期" className="text-[10px] w-20 px-1 outline-none" /><span className="text-gray-300">至</span><input type="text" placeholder="结束日期" className="text-[10px] w-20 px-1 outline-none" /></div></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">创建时间</span><div className="flex items-center border border-gray-200 rounded-lg px-2 h-8 bg-white"><Calendar size={12} className="text-gray-300" /><input type="text" placeholder="开始日期" className="text-[10px] w-20 px-1 outline-none font-mono" /><span className="text-gray-300">至</span><input type="text" placeholder="结束日期" className="text-[10px] w-20 px-1 outline-none font-mono" /></div></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">转派人</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
             <div className="flex items-center gap-2">
               <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
@@ -477,7 +477,7 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
         return (
           <div className="flex flex-wrap items-center gap-6">
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">师傅</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
-            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">师傅电话</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs" /></div>
+            <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">师傅电话</span><input type="text" placeholder="请输入内容" className="w-32 h-8 px-3 border border-gray-200 rounded-lg text-xs font-mono" /></div>
             <div className="flex items-center gap-2"><span className="text-xs text-gray-500 whitespace-nowrap">状态</span><select className="w-28 h-8 border border-gray-200 rounded-lg text-xs text-gray-400 appearance-none bg-white px-3"><option>请选择</option></select></div>
             <div className="flex items-center gap-2">
               <button className="h-8 px-5 bg-blue-500 text-white text-xs rounded-lg font-medium">搜索</button>
@@ -719,9 +719,9 @@ const App = () => {
         if (robotSubTab === "天润融通") {
           return (
             <tr key={order.id} className={`${rowClass} text-[11px] h-12`}>
-              <td className="px-6 py-2">{order.id}</td>
+              <td className="px-6 py-2 font-mono">{order.id}</td>
               <td className="px-6 py-2">{order.dept}</td>
-              <td className="px-6 py-2">{order.phone400}</td>
+              <td className="px-6 py-2 font-mono">{order.phone400}</td>
               <td className="px-6 py-2">{order.source}</td>
               <td className="px-6 py-2 text-gray-400">{order.platform}</td>
               <td className="px-6 py-2 text-center">
@@ -732,11 +732,11 @@ const App = () => {
         }
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-12`}>
-            <td className="px-6 py-2">{order.id}</td>
-            <td className="px-6 py-2">{order.shopId}</td>
+            <td className="px-6 py-2 font-mono">{order.id}</td>
+            <td className="px-6 py-2 font-mono">{order.shopId}</td>
             <td className="px-6 py-2">{order.shopName}</td>
             <td className="px-6 py-2">{order.source}</td>
-            <td className="px-6 py-2">{order.phoneNo}</td>
+            <td className="px-6 py-2 font-mono">{order.phoneNo}</td>
             <td className="px-6 py-2 text-center">
               <span className="text-rose-400 cursor-pointer hover:underline font-medium">删除</span>
             </td>
@@ -745,10 +745,10 @@ const App = () => {
       case "个人配置":
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-12`}>
-            <td className="px-6 py-2">{order.id}</td>
+            <td className="px-6 py-2 font-mono">{order.id}</td>
             <td className="px-6 py-2">{order.username}</td>
             <td className="px-6 py-2">{order.configItem}</td>
-            <td className="px-6 py-2 text-gray-400">{order.configValue}</td>
+            <td className="px-6 py-2 text-gray-400 font-mono">{order.configValue}</td>
             <td className="px-6 py-2 text-gray-400">{order.configDesc}</td>
             <td className="px-6 py-2 text-gray-400">{order.remark}</td>
             <td className="px-6 py-2 text-center text-blue-400 space-x-2 font-medium">
@@ -761,12 +761,12 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-12`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2 text-center">{order.id}</td>
+            <td className="px-4 py-2 text-center font-mono">{order.id}</td>
             <td className="px-4 py-2">{order.creator}</td>
             <td className="px-4 py-2">{order.module}</td>
-            <td className="px-4 py-2">{order.password}</td>
+            <td className="px-4 py-2 font-mono">{order.password}</td>
             <td className="px-4 py-2">{order.remark}</td>
-            <td className="px-4 py-2">{order.roleId}</td>
+            <td className="px-4 py-2 font-mono">{order.roleId}</td>
             <td className="px-4 py-2">{order.roleName}</td>
             <td className="px-4 py-2 text-emerald-500 font-medium">{order.status}</td>
             <td className="px-6 py-2 text-center text-blue-400 space-x-2 font-medium">
@@ -780,12 +780,12 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[10px] h-10`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-2 py-2">{order.pNo}</td>
+            <td className="px-2 py-2 font-mono">{order.pNo}</td>
             <td className="px-2 py-2">{order.pName}</td>
-            <td className="px-2 py-2">{order.timeout}</td>
+            <td className="px-2 py-2 font-mono">{order.timeout}</td>
             <td className="px-2 py-2">{order.urgency}</td>
-            <td className="px-2 py-2">{order.sort}</td>
-            <td className="px-2 py-2">{order.level}</td>
+            <td className="px-2 py-2 font-mono">{order.sort}</td>
+            <td className="px-2 py-2 font-mono">{order.level}</td>
             <td className="px-2 py-2">{order.status}</td>
             <td className="px-2 py-2">{order.keywords}</td>
             <td className="px-2 py-2">{order.image}</td>
@@ -797,12 +797,12 @@ const App = () => {
       case "地域管理":
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-10`}>
-            <td className="px-6 py-2">{order.id}</td>
-            <td className="px-6 py-2">{order.code}</td>
+            <td className="px-6 py-2 font-mono">{order.id}</td>
+            <td className="px-6 py-2 font-mono">{order.code}</td>
             <td className="px-6 py-2">{order.name}</td>
             <td className="px-6 py-2">{order.fullName}</td>
             <td className="px-6 py-2 text-blue-500 font-medium">生效</td>
-            <td className="px-6 py-2">{order.level}</td>
+            <td className="px-6 py-2 font-mono">{order.level}</td>
             <td className="px-6 py-2 text-center text-blue-400 cursor-pointer hover:underline">修改</td>
           </tr>
         );
@@ -810,13 +810,13 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-10`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2">{order.id}</td>
-            <td className="px-4 py-2">{order.uNo}</td>
+            <td className="px-4 py-2 font-mono">{order.id}</td>
+            <td className="px-4 py-2 font-mono">{order.uNo}</td>
             <td className="px-4 py-2">{order.username}</td>
             <td className="px-4 py-2">{order.projects}</td>
             <td className="px-4 py-2">{order.regions}</td>
             <td className="px-4 py-2">{order.source}</td>
-            <td className="px-4 py-2">{order.period}</td>
+            <td className="px-4 py-2 font-mono">{order.period}</td>
             <td className="px-4 py-2 text-center text-blue-400 cursor-pointer hover:underline">修改</td>
           </tr>
         );
@@ -824,10 +824,10 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[10px] h-12`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2">{order.id}</td>
+            <td className="px-4 py-2 font-mono">{order.id}</td>
             <td className="px-4 py-2">{order.username}</td>
-            <td className="px-4 py-2">{order.phone}</td>
-            <td className="px-4 py-2">{order.mUid}</td>
+            <td className="px-4 py-2 font-mono">{order.phone}</td>
+            <td className="px-4 py-2 font-mono">{order.mUid}</td>
             <td className="px-4 py-2 truncate max-w-[150px]">{order.project}</td>
             <td className="px-6 py-2 text-[9px] text-gray-400 leading-tight">{order.region}</td>
             <td className="px-4 py-2">{order.status}</td>
@@ -841,7 +841,7 @@ const App = () => {
       case "订单权限":
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-10`}>
-            <td className="px-6 py-2">{order.id}</td>
+            <td className="px-6 py-2 font-mono">{order.id}</td>
             <td className="px-6 py-2">{order.source}</td>
             <td className="px-6 py-2 text-center text-rose-400 cursor-pointer hover:underline">删除</td>
           </tr>
@@ -850,12 +850,12 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-10`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2">{order.id}</td>
-            <td className="px-4 py-2">{order.phoneId}</td>
-            <td className="px-4 py-2">{order.phoneNo}</td>
-            <td className="px-4 py-2">{order.phoneNumber}</td>
+            <td className="px-4 py-2 font-mono">{order.id}</td>
+            <td className="px-4 py-2 font-mono">{order.phoneId}</td>
+            <td className="px-4 py-2 font-mono">{order.phoneNo}</td>
+            <td className="px-4 py-2 font-mono">{order.phoneNumber}</td>
             <td className="px-4 py-2">{order.model}</td>
-            <td className="px-4 py-2">{order.score}</td>
+            <td className="px-4 py-2 font-mono">{order.score}</td>
             <td className="px-4 py-2 text-blue-400 font-medium">生效</td>
             <td className="px-4 py-2">{order.image}</td>
             <td className="px-4 py-2">{order.remark}</td>
@@ -869,12 +869,12 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[11px] h-10`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2">{order.id}</td>
-            <td className="px-4 py-2">{order.batchNo}</td>
-            <td className="px-4 py-2">{order.peopleCount}</td>
-            <td className="px-4 py-2">{order.phoneCount}</td>
+            <td className="px-4 py-2 font-mono">{order.id}</td>
+            <td className="px-4 py-2 font-mono">{order.batchNo}</td>
+            <td className="px-4 py-2 font-mono">{order.peopleCount}</td>
+            <td className="px-4 py-2 font-mono">{order.phoneCount}</td>
             <td className="px-4 py-2">{order.creator}</td>
-            <td className="px-4 py-2">{order.createTime}</td>
+            <td className="px-4 py-2 font-mono">{order.createTime}</td>
             <td className="px-4 py-2 text-center text-blue-400 space-x-2 font-medium">
               <span className="cursor-pointer hover:underline">快速分配</span>
               <span className="cursor-pointer hover:underline">分配详情</span>
@@ -886,17 +886,17 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[10px] h-10`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2">{order.id}</td>
-            <td className="px-4 py-2">{order.exportNo}</td>
+            <td className="px-4 py-2 font-mono">{order.id}</td>
+            <td className="px-4 py-2 font-mono">{order.exportNo}</td>
             <td className="px-4 py-2">{order.creator}</td>
-            <td className="px-4 py-2">{order.count}</td>
+            <td className="px-4 py-2 font-mono">{order.count}</td>
             <td className="px-4 py-2 text-emerald-500 font-medium">{order.status}</td>
             <td className="px-4 py-2">{order.project}</td>
             <td className="px-4 py-2">{order.filename}</td>
-            <td className="px-4 py-2">{order.size}</td>
-            <td className="px-4 py-2">{order.duration}</td>
-            <td className="px-4 py-2">{order.startTime}</td>
-            <td className="px-4 py-2">{order.endTime}</td>
+            <td className="px-4 py-2 font-mono">{order.size}</td>
+            <td className="px-4 py-2 font-mono">{order.duration}</td>
+            <td className="px-4 py-2 font-mono">{order.startTime}</td>
+            <td className="px-4 py-2 font-mono">{order.endTime}</td>
             <td className="px-4 py-2 text-center text-blue-400 cursor-pointer hover:underline font-medium">下载</td>
           </tr>
         );
@@ -904,28 +904,28 @@ const App = () => {
         return (
           <tr key={order.id} className={`${rowClass} text-[10px] h-10`}>
             <td className="px-4 py-2 text-center"><input type="checkbox" className="rounded border-gray-200" /></td>
-            <td className="px-4 py-2 whitespace-nowrap">{order.createTime}</td>
+            <td className="px-4 py-2 whitespace-nowrap font-mono">{order.createTime}</td>
             <td className="px-4 py-2">{order.creator}</td>
             <td className="px-4 py-2 text-center">
               <span className="px-2 py-0.5 bg-rose-50 text-rose-300 border border-rose-100 rounded text-[9px]">{order.status}</span>
             </td>
             <td className="px-4 py-2">{order.city}</td>
-            <td className="px-4 py-2">{order.vNumber}</td>
-            <td className="px-2 py-2">{order.ext}</td>
-            <td className="px-4 py-2">{order.cPhone}</td>
-            <td className="px-4 py-2">{order.mPhone}</td>
-            <td className="px-4 py-2">{order.orderId}</td>
+            <td className="px-4 py-2 font-mono">{order.vNumber}</td>
+            <td className="px-2 py-2 font-mono">{order.ext}</td>
+            <td className="px-4 py-2 font-mono">{order.cPhone}</td>
+            <td className="px-4 py-2 font-mono">{order.mPhone}</td>
+            <td className="px-4 py-2 font-mono">{order.orderId}</td>
             <td className="px-4 py-2">{order.bindType}</td>
-            <td className="px-4 py-2 truncate max-w-[80px]">{order.pool}</td>
-            <td className="px-4 py-2">{order.unbindTime}</td>
-            <td className="px-4 py-2 whitespace-nowrap">{order.expireTime}</td>
+            <td className="px-4 py-2 truncate max-w-[80px] font-mono">{order.pool}</td>
+            <td className="px-4 py-2 font-mono">{order.unbindTime}</td>
+            <td className="px-4 py-2 whitespace-nowrap font-mono">{order.expireTime}</td>
             <td className="px-4 py-2 text-center text-blue-400 cursor-pointer hover:underline font-medium">通话记录</td>
           </tr>
         );
       default:
         return (
           <tr key={order.id} className={`${rowClass} text-xs h-10`}>
-            <td className="px-6 py-2 text-center">{order.id}</td>
+            <td className="px-6 py-2 text-center font-mono">{order.id}</td>
             <td className="px-6 py-2">{order.source}</td>
             <td className="px-6 py-2">{order.region}</td>
             <td className="px-6 py-2">{order.project}</td>
@@ -963,7 +963,7 @@ const App = () => {
 
         {/* 分页 */}
         <div className="bg-white px-6 py-4 border-t border-gray-100 flex justify-center items-center text-[11px] text-gray-400 gap-6 shrink-0 select-none">
-            <span>共 {totalItems} 条</span>
+            <span>共 <span className="font-mono">{totalItems}</span> 条</span>
             <div className="relative">
                 <select 
                     value={pageSize}
@@ -979,14 +979,14 @@ const App = () => {
             <div className="flex items-center gap-1">
                 <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} className="w-7 h-7 flex items-center justify-center border border-gray-100 rounded hover:bg-slate-50 disabled:opacity-30"><ChevronLeft size={14} /></button>
                 {Array.from({ length: Math.min(6, totalPages) }).map((_, i) => (
-                    <button key={i} onClick={() => setCurrentPage(i + 1)} className={`w-7 h-7 flex items-center justify-center border rounded font-bold ${currentPage === i + 1 ? 'bg-blue-500 text-white border-blue-500' : 'bg-white border-gray-100 hover:border-blue-300'}`}>{i + 1}</button>
+                    <button key={i} onClick={() => setCurrentPage(i + 1)} className={`w-7 h-7 flex items-center justify-center border rounded font-bold font-mono ${currentPage === i + 1 ? 'bg-blue-500 text-white border-blue-500' : 'bg-white border-gray-100 hover:border-blue-300'}`}>{i + 1}</button>
                 ))}
                 <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} className="w-7 h-7 flex items-center justify-center border border-gray-100 rounded hover:bg-slate-50 disabled:opacity-30"><ChevronRight size={14} /></button>
             </div>
 
             <div className="flex items-center gap-2">
                 <span>前往</span>
-                <input type="number" min={1} max={totalPages} value={currentPage} onChange={(e) => { const val = parseInt(e.target.value); if (val >= 1 && val <= totalPages) setCurrentPage(val); }} className="w-10 h-7 border border-gray-100 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-100" />
+                <input type="number" min={1} max={totalPages} value={currentPage} onChange={(e) => { const val = parseInt(e.target.value); if (val >= 1 && val <= totalPages) setCurrentPage(val); }} className="w-10 h-7 border border-gray-100 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-100 font-mono" />
                 <span>页</span>
             </div>
         </div>
