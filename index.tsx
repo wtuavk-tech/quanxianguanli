@@ -319,8 +319,8 @@ const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (
               onClick={() => onSelect(btn.name)}
               className={`h-11 w-full px-2 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 border box-border ${
                 isActive 
-                  ? `bg-white ${colors.border} ${colors.text} shadow-md scale-105 border-2` // 选中：白底、有色边框、有色文字、放大
-                  : `bg-white border-gray-100 text-gray-600 ${colors.hoverBorder} ${colors.hoverText} hover:shadow hover:-translate-y-0.5 border` // 未选中：白底、灰边框
+                  ? `bg-white ${colors.border} ${colors.text} shadow-md scale-105 border-2` // 选中：白底、有色边框、有色文字、放大、加粗边框
+                  : `bg-white ${colors.border} text-gray-600 ${colors.hoverText} hover:shadow hover:-translate-y-0.5 border` // 未选中：白底、有色边框（与图标同色）、灰色文字
               }`}
             >
               {/* 图标背景保持彩色填充 */}
