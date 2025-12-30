@@ -604,7 +604,7 @@ const App = () => {
       case "机器人录单配置":
         if (robotSubTab === "天润融通") {
           return (
-            <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+            <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
               <th className="px-6 py-3 w-16">序号</th>
               <th className="px-6 py-3">部门</th>
               <th className="px-6 py-3">400号码</th>
@@ -615,7 +615,7 @@ const App = () => {
           );
         }
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-6 py-3 w-16">序号</th>
             <th className="px-6 py-3">店铺ID</th>
             <th className="px-6 py-3">店铺名称</th>
@@ -626,7 +626,7 @@ const App = () => {
         );
       case "个人配置":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-6 py-3 w-16">序号</th>
             <th className="px-6 py-3">用户名</th>
             <th className="px-6 py-3">配置项</th>
@@ -638,7 +638,7 @@ const App = () => {
         );
       case "导出配置":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3 w-16 text-center">序号</th>
             <th className="px-4 py-3">创建人</th>
@@ -653,7 +653,7 @@ const App = () => {
         );
       case "项目管理":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[10px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[10px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-2 py-3">项目编号 <ChevronUp size={10} className="inline ml-1" /></th>
             <th className="px-2 py-3">项目名称 <ChevronUp size={10} className="inline ml-1" /></th>
@@ -671,7 +671,7 @@ const App = () => {
         );
       case "地域管理":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-6 py-3">编号 <ChevronUp size={10} className="inline" /></th>
             <th className="px-6 py-3">代码 <ChevronUp size={10} className="inline" /></th>
             <th className="px-6 py-3">名称 <ChevronUp size={10} className="inline" /></th>
@@ -683,7 +683,7 @@ const App = () => {
         );
       case "派单权限":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">用户编号 <ChevronUp size={10} className="inline" /></th>
@@ -697,7 +697,7 @@ const App = () => {
         );
       case "接单权限":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">用户名</th>
@@ -711,7 +711,7 @@ const App = () => {
         );
       case "订单权限":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-6 py-3 w-16">序号</th>
             <th className="px-6 py-3">订单来源</th>
             <th className="px-6 py-3 text-center">操作</th>
@@ -719,7 +719,7 @@ const App = () => {
         );
       case "手机信息":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">手机ID</th>
@@ -735,7 +735,7 @@ const App = () => {
         );
       case "手机分配":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">批次号 <ChevronUp size={10} className="inline" /></th>
@@ -748,7 +748,7 @@ const App = () => {
         );
       case "导出任务":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[11px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">序号</th>
             <th className="px-4 py-3">导出编号</th>
@@ -766,7 +766,7 @@ const App = () => {
         );
       case "号码绑定":
         return (
-          <tr className="border-b border-[#cbd5e1] text-[10px] text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-[10px] text-gray-600 bg-slate-50/50">
             <th className="px-4 py-3 w-10"><input type="checkbox" className="rounded" /></th>
             <th className="px-4 py-3">创建时间 <ChevronUp size={10} className="inline ml-1" /></th>
             <th className="px-4 py-3">创建者</th>
@@ -787,7 +787,7 @@ const App = () => {
       case "直派转未派":
       default:
         return (
-          <tr className="border-b border-[#cbd5e1] text-xs text-gray-400 bg-slate-50/50">
+          <tr className="border-b border-[#cbd5e1] text-xs text-gray-600 bg-slate-50/50">
             <th className="px-6 py-3 w-20 text-center">序号</th>
             <th className="px-6 py-3">订单来源</th>
             <th className="px-6 py-3">地域</th>
