@@ -11,7 +11,23 @@ import {
   Calendar,
   Search,
   RotateCcw,
-  Download
+  Download,
+  ShieldAlert,
+  BellRing,
+  Settings,
+  ListTodo,
+  FileText,
+  Megaphone,
+  Link,
+  Map,
+  Lock,
+  Smartphone,
+  Users,
+  FileOutput,
+  UserCog,
+  Bot,
+  Flame,
+  Flag
 } from 'lucide-react';
 
 // --- 类型定义 ---
@@ -195,51 +211,123 @@ const generateMockData = (type: ActionType, subTab?: string): OrderData[] => {
 // --- 子组件 ---
 
 const NotificationBar = () => (
-  <div className="flex items-center gap-4 mb-4 px-4 py-3 bg-[#0B1727] text-white rounded-xl shadow-md overflow-hidden relative shrink-0">
-    <div className="flex items-center gap-3 shrink-0 z-10">
-      <div className="px-2 py-1 bg-[#F5222D] text-white text-xs font-bold rounded flex items-center gap-1 shadow-sm">
-        <span>重要公告</span>
-      </div>
-      <Bell size={16} className="text-gray-400" />
+  <div className="bg-white border border-gray-200 rounded-xl p-3 mb-4 flex items-center shadow-sm justify-between gap-4">
+    <div className="flex items-center gap-4 flex-1 overflow-hidden">
+        <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 shadow-sm shrink-0 transition-colors">
+          主要公告 <Bell size={14} className="ml-1" />
+        </button>
+        <div className="flex items-center gap-8 text-xs font-medium text-gray-700 overflow-hidden whitespace-nowrap">
+          <span className="truncate cursor-pointer hover:text-blue-500 transition-colors">秋季职级晋升评审的通知: 点击下方详情以阅读完整公告内容。</span>
+          <span className="flex items-center gap-2 truncate cursor-pointer hover:text-blue-500 transition-colors">
+            <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
+            <Megaphone size={14} className="text-gray-400" />
+            系统升级通知: 今晚 24:00 将进行系统维护。
+          </span>
+          <span className="flex items-center gap-2 truncate cursor-pointer hover:text-blue-500 transition-colors">
+             <Flag size={14} className="text-rose-500" />
+             <Flame size={14} className="text-amber-500" />
+             10月业绩pk赛圆满结束，恭喜华东大区获得冠军!
+          </span>
+        </div>
     </div>
-    <div className="flex-1 overflow-hidden relative h-5 flex items-center">
-      <div className="whitespace-nowrap animate-[marquee_25s_linear_infinite] flex items-center gap-8 text-sm font-medium text-gray-200 cursor-default">
-        <span>📢 关于 2025 年度秋季职级晋升评审的通知：点击下方详情以阅读完整公告内容。请所有相关人员务必在截止日期前完成确认。</span>
-        <span>🔥 界面优化：系统视觉风格已全面升级，如有问题请联系管理员。</span>
-      </div>
-    </div>
-    <div className="ml-4 px-3 py-1 bg-[#1E293B] rounded text-xs text-gray-400 font-mono tracking-wide shrink-0">
+    <div className="bg-gray-50 text-gray-400 px-3 py-1 rounded-md text-xs font-mono shrink-0 border border-gray-100">
       2025-11-19
     </div>
-    <style>{`
-      @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-    `}</style>
   </div>
 );
 
 const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (v: string) => void }) => {
   const buttons = [
-    "直派转未派", "号码绑定", "转派权限", "线下师傅", "项目管理", "地域管理", "派单权限", "接单权限",
-    "订单权限", "手机信息", "手机分配", "导出任务", "个人配置", "导出配置", "机器人录单配置"
+    { name: "直派转未派", icon: ShieldAlert, color: "red" },
+    { name: "号码绑定", icon: Link, color: "amber" },
+    { name: "转派权限", icon: UserCog, color: "blue" },
+    { name: "线下师傅", icon: Users, color: "green" },
+    { name: "项目管理", icon: ListTodo, color: "teal" },
+    { name: "地域管理", icon: Map, color: "purple" },
+    { name: "派单权限", icon: Lock, color: "red" },
+    { name: "接单权限", icon: Smartphone, color: "amber" },
+    { name: "订单权限", icon: FileText, color: "blue" },
+    { name: "手机信息", icon: Smartphone, color: "green" },
+    { name: "手机分配", icon: Users, color: "teal" },
+    { name: "导出任务", icon: FileOutput, color: "purple" },
+    { name: "个人配置", icon: UserCog, color: "red" },
+    { name: "导出配置", icon: Settings, color: "amber" },
+    { name: "机器人录单配置", icon: Bot, color: "blue" }
   ];
+
+  const getColorClasses = (color: string) => {
+    // 简化颜色映射逻辑，适应新的“只有边框色”需求
+    const map: any = {
+      red: { 
+        border: 'border-red-500', 
+        text: 'text-red-600', 
+        iconBg: 'bg-red-500',
+        hoverBorder: 'hover:border-red-300', 
+        hoverText: 'hover:text-red-600' 
+      },
+      amber: { 
+        border: 'border-amber-500', 
+        text: 'text-amber-600', 
+        iconBg: 'bg-amber-500',
+        hoverBorder: 'hover:border-amber-300', 
+        hoverText: 'hover:text-amber-600' 
+      },
+      blue: { 
+        border: 'border-blue-500', 
+        text: 'text-blue-600', 
+        iconBg: 'bg-blue-500',
+        hoverBorder: 'hover:border-blue-300', 
+        hoverText: 'hover:text-blue-600' 
+      },
+      green: { 
+        border: 'border-green-500', 
+        text: 'text-green-600', 
+        iconBg: 'bg-green-500',
+        hoverBorder: 'hover:border-green-300', 
+        hoverText: 'hover:text-green-600' 
+      },
+      teal: { 
+        border: 'border-teal-500', 
+        text: 'text-teal-600', 
+        iconBg: 'bg-teal-500',
+        hoverBorder: 'hover:border-teal-300', 
+        hoverText: 'hover:text-teal-600' 
+      },
+      purple: { 
+        border: 'border-purple-500', 
+        text: 'text-purple-600', 
+        iconBg: 'bg-purple-500',
+        hoverBorder: 'hover:border-purple-300', 
+        hoverText: 'hover:text-purple-600' 
+      },
+    };
+    return map[color] || map.blue;
+  };
 
   return (
     <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl">
+      {/* 使用 grid-cols-8 实现两行布局 (15个元素) */}
       <div className="grid grid-cols-8 gap-3">
         {buttons.map((btn, index) => {
-          const isActive = active === btn;
-          // Updated styling: height reduced by 20% (h-11 -> h-9), background #F0F9FE, blue text
+          const isActive = active === btn.name;
+          const colors = getColorClasses(btn.color);
+          const Icon = btn.icon;
+          
           return (
             <button 
               key={index}
-              onClick={() => onSelect(btn)}
-              className={`h-9 w-full px-1 text-sm font-bold rounded-xl transition-all shadow-sm flex items-center justify-center text-center leading-tight border ${
+              onClick={() => onSelect(btn.name)}
+              className={`h-11 w-full px-2 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 border box-border ${
                 isActive 
-                  ? 'bg-blue-500 text-white border-blue-500 shadow-md scale-105' 
-                  : 'bg-[#F0F9FE] text-blue-500 border-blue-200 hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5'
+                  ? `bg-white ${colors.border} ${colors.text} shadow-md scale-105 border-2` // 选中：白底、有色边框、有色文字、放大
+                  : `bg-white border-gray-100 text-gray-600 ${colors.hoverBorder} ${colors.hoverText} hover:shadow hover:-translate-y-0.5 border` // 未选中：白底、灰边框
               }`}
             >
-              {btn}
+              {/* 图标背景保持彩色填充 */}
+              <div className={`p-1 rounded-full shrink-0 ${colors.iconBg} flex items-center justify-center`}>
+                 <Icon size={14} className="text-white" />
+              </div>
+              <span className="text-xs font-bold truncate">{btn.name}</span>
             </button>
           );
         })}
@@ -710,9 +798,9 @@ const App = () => {
   };
 
   const renderTableRow = (order: OrderData) => {
-    // 隔行变色：加深约 30%，使用 even:bg-[#F0F9FE]
+    // 隔行变色：加深约 30%，使用 even:bg-[#FFF0F0] (Light Red)
     // 每一行的分割线颜色为：#cbd5e1
-    const rowClass = "text-gray-600 transition-colors hover:bg-blue-50/80 even:bg-[#F0F9FE] border-b border-[#cbd5e1]";
+    const rowClass = "text-gray-600 transition-colors hover:bg-red-50/80 even:bg-[#FFF0F0] border-b border-[#cbd5e1]";
     
     switch(selectedAction) {
       case "机器人录单配置":
