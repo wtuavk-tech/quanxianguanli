@@ -216,7 +216,8 @@ const NotificationBar = () => (
         <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 shadow-sm shrink-0 transition-colors">
           主要公告 <Bell size={14} className="ml-1" />
         </button>
-        <div className="flex items-center gap-8 text-xs font-medium text-gray-700 overflow-hidden whitespace-nowrap">
+        {/* Changed text-xs to text-sm here */}
+        <div className="flex items-center gap-8 text-sm font-medium text-gray-700 overflow-hidden whitespace-nowrap">
           <span className="truncate cursor-pointer hover:text-blue-500 transition-colors">秋季职级晋升评审的通知: 点击下方详情以阅读完整公告内容。</span>
           <span className="flex items-center gap-2 truncate cursor-pointer hover:text-blue-500 transition-colors">
             <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
