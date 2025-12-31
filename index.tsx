@@ -211,7 +211,7 @@ const generateMockData = (type: ActionType, subTab?: string): OrderData[] => {
 // --- 子组件 ---
 
 const NotificationBar = () => (
-  <div className="bg-white border border-gray-200 rounded-xl p-3 mb-4 flex items-center shadow-sm justify-between gap-4">
+  <div className="bg-white border border-gray-200 rounded-xl p-3 mb-4 flex items-center shadow-sm justify-between gap-4 shrink-0">
     <div className="flex items-center gap-4 flex-1 overflow-hidden">
         <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 shadow-sm shrink-0 transition-colors">
           主要公告 <Bell size={14} className="ml-1" />
@@ -306,7 +306,7 @@ const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (
   };
 
   return (
-    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl">
+    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl shrink-0">
       {/* 使用 grid-cols-8 实现两行布局 (15个元素) */}
       <div className="grid grid-cols-8 gap-3">
         {buttons.map((btn, index) => {
@@ -580,7 +580,7 @@ const SearchPanel = ({ action, activeTab, onTabChange }: { action: string | null
   };
 
   return (
-    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl">
+    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl shrink-0">
       {renderContent()}
     </div>
   );
@@ -784,7 +784,6 @@ const App = () => {
             <th className="px-4 py-3 text-center">操作</th>
           </tr>
         );
-      case "直派转未派":
       default:
         return (
           <tr className="border-b border-[#cbd5e1] text-xs text-gray-600 bg-slate-50/50">
@@ -1028,7 +1027,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 flex flex-col font-sans">
+    <div className="h-screen bg-slate-50 p-6 flex flex-col font-sans overflow-hidden">
       <NotificationBar />
       <QuickActions active={selectedAction} onSelect={(val) => { setSelectedAction(val); setCurrentPage(1); }} />
       <SearchPanel 
@@ -1050,32 +1049,75 @@ const App = () => {
           </table>
         </div>
 
-        {/* 分页 */}
-        <div className="bg-white px-6 py-4 border-t border-gray-100 flex justify-center items-center text-[11px] text-gray-400 gap-6 shrink-0 select-none">
-            <span>共 <span className="font-mono">{totalItems}</span> 条</span>
+        {/* 分页 - 样式优化 - 完美复刻 */}
+        <div className="bg-white px-6 py-3 border-t border-gray-200 flex justify-center items-center text-[13px] text-[#606266] gap-3 shrink-0 select-none">
+            {/* Total */}
+            <span className="text-[#606266]">共 {totalItems} 条</span>
+            
+            {/* Page Size */}
             <div className="relative">
                 <select 
                     value={pageSize}
                     onChange={(e) => { setPageSize(Number(e.target.value)); setCurrentPage(1); }}
-                    className="appearance-none border border-gray-100 rounded px-3 py-1 text-[11px] bg-white h-7 cursor-pointer pr-8 focus:outline-none focus:ring-1 focus:ring-blue-100"
+                    className="appearance-none border border-[#dcdfe6] rounded px-2 py-1 bg-white h-7 leading-none cursor-pointer pr-7 focus:outline-none focus:border-[#409eff] hover:border-[#c0c4cc] transition-colors text-[#606266]"
                 >
                     <option value={10}>10条/页</option>
                     <option value={20}>20条/页</option>
                 </select>
-                <ChevronDown size={10} className="absolute right-2 top-2 text-gray-300 pointer-events-none" />
+                <ChevronDown size={12} className="absolute right-2 top-2 text-[#c0c4cc] pointer-events-none" />
             </div>
 
-            <div className="flex items-center gap-1">
-                <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} className="w-7 h-7 flex items-center justify-center border border-gray-100 rounded hover:bg-slate-50 disabled:opacity-30"><ChevronLeft size={14} /></button>
-                {Array.from({ length: Math.min(6, totalPages) }).map((_, i) => (
-                    <button key={i} onClick={() => setCurrentPage(i + 1)} className={`w-7 h-7 flex items-center justify-center border rounded font-bold font-mono ${currentPage === i + 1 ? 'bg-blue-500 text-white border-blue-500' : 'bg-white border-gray-100 hover:border-blue-300'}`}>{i + 1}</button>
-                ))}
-                <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} className="w-7 h-7 flex items-center justify-center border border-gray-100 rounded hover:bg-slate-50 disabled:opacity-30"><ChevronRight size={14} /></button>
+            {/* Pagination Controls */}
+            <div className="flex items-center gap-1 select-none mx-2">
+                <button 
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))} 
+                    disabled={currentPage === 1} 
+                    className="w-7 h-7 flex items-center justify-center text-[#c0c4cc] hover:text-[#409eff] disabled:text-[#e4e7ed] disabled:cursor-not-allowed transition-colors"
+                >
+                    <ChevronLeft size={14} />
+                </button>
+                
+                {Array.from({ length: Math.min(6, totalPages) }).map((_, i) => {
+                    const pageNum = i + 1;
+                    const isActive = currentPage === pageNum;
+                    return (
+                        <button 
+                            key={i} 
+                            onClick={() => setCurrentPage(pageNum)} 
+                            className={`min-w-[28px] h-7 flex items-center justify-center rounded font-normal transition-colors ${
+                                isActive 
+                                    ? 'text-[#409eff] font-bold cursor-default' 
+                                    : 'text-[#606266] hover:text-[#409eff]'
+                            }`}
+                        >
+                            {pageNum}
+                        </button>
+                    );
+                })}
+
+                <button 
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} 
+                    disabled={currentPage === totalPages} 
+                    className="w-7 h-7 flex items-center justify-center text-[#c0c4cc] hover:text-[#409eff] disabled:text-[#e4e7ed] disabled:cursor-not-allowed transition-colors"
+                >
+                    <ChevronRight size={14} />
+                </button>
             </div>
 
+            {/* Jump to */}
             <div className="flex items-center gap-2">
                 <span>前往</span>
-                <input type="number" min={1} max={totalPages} value={currentPage} onChange={(e) => { const val = parseInt(e.target.value); if (val >= 1 && val <= totalPages) setCurrentPage(val); }} className="w-10 h-7 border border-gray-100 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-100 font-mono" />
+                <input 
+                    type="number" 
+                    min={1} 
+                    max={totalPages} 
+                    value={currentPage} 
+                    onChange={(e) => { 
+                        const val = parseInt(e.target.value); 
+                        if (!isNaN(val) && val >= 1 && val <= totalPages) setCurrentPage(val); 
+                    }} 
+                    className="w-12 h-7 border border-[#dcdfe6] rounded text-center focus:outline-none focus:border-[#409eff] hover:border-[#c0c4cc] transition-colors font-mono text-[#606266]" 
+                />
                 <span>页</span>
             </div>
         </div>
