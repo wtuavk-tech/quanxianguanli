@@ -306,7 +306,7 @@ const QuickActions = ({ active, onSelect }: { active: string | null, onSelect: (
   };
 
   return (
-    <div className="bg-white p-5 mb-4 border border-gray-200 shadow-sm rounded-2xl shrink-0">
+    <div className="mb-4 shrink-0">
       {/* 使用 grid-cols-8 实现两行布局 (15个元素) */}
       <div className="grid grid-cols-8 gap-3">
         {buttons.map((btn, index) => {
